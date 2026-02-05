@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botswana Lodge - AI-Powered Safari Bookings via WhatsApp</title>
+    <meta name="description" content="Experience luxury safari lodging in Botswana with instant 24/7 booking through WhatsApp AI concierge. Book tents and game drives instantly.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Botswana Lodge - AI-Powered Safari Bookings">
+    <meta property="og:description" content="Experience luxury safari lodging with instant WhatsApp booking.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏕️</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#" class="logo" aria-label="Botswana Lodge Home">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>
+            </svg>
+            <span>BOTSWANA LODGE</span>
+        </a>
+        <button class="whatsapp-header-btn" id="whatsappHeaderBtn" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Floating WhatsApp Button -->
+    <button class="whatsapp-float" id="whatsappFloat" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80" 
+                 alt="Sunset over Okavango Delta, Botswana" 
+                 loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Your Oasis in the Heart of Botswana</h1>
+            <p class="hero-subtitle">Experience the untamed beauty of the wilderness with seamless luxury.</p>
+            <button class="btn btn-whatsapp hero-cta" id="heroCta">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Chat on WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <!-- AI Concierge Preview Section -->
+    <section class="concierge" id="concierge">
+        <div class="concierge-header">
+            <span class="concierge-icon">🦁</span>
+            <h2>Meet Your 24/7 Safari Guide</h2>
+        </div>
+        
+        <div class="chat-preview">
+            <!-- AI Message 1 -->
+            <div class="chat-message chat-ai">
+                <div class="chat-avatar">B</div>
+                <div class="chat-bubble">
+                    <p>Hello! I'm your AI concierge. I can help you book your stay, plan safaris, or answer any questions. How can I help you today?</p>
+                    <span class="chat-time">Just now</span>
+                </div>
+            </div>
+            
+            <!-- User Message -->
+            <div class="chat-message chat-user">
+                <div class="chat-bubble">
+                    <p>I'd like to book a luxury tent for next week</p>
+                </div>
+            </div>
+            
+            <!-- AI Message 2 -->
+            <div class="chat-message chat-ai">
+                <div class="chat-avatar">B</div>
+                <div class="chat-bubble">
+                    <p>Excellent choice! 👍</p>
+                    <p>Our luxury tents have 2 openings left for next week. Would you like to see the rates or book directly via WhatsApp?</p>
+                    <div class="chat-buttons">
+                        <button class="btn btn-outline" id="viewRatesBtn">VIEW RATES</button>
+                        <button class="btn btn-whatsapp" id="bookWhatsappBtn">BOOK VIA WHATSAPP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Section -->
+    <section class="offerings" id="offerings">
+        <div class="offerings-header">
+            <h2>Our Offerings</h2>
+            <a href="#" class="see-all">SEE ALL</a>
+        </div>
+        
+        <div class="offerings-grid">
+            <!-- Luxury Canvas Suites -->
+            <article class="offering-card">
+                <div class="offering-image">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" 
+                         alt="Luxury safari tent interior with king bed" 
+                         loading="lazy">
+                </div>
+                <div class="offering-content">
+                    <h3>Luxury Canvas Suites</h3>
+                    <p>Private oasis, outdoor rain shower, and delta views.</p>
+                    <div class="offering-footer">
+                        <a href="#" class="offering-link" data-type="room">Explore Room →</a>
+                        <span class="offering-price">$450<small>/night</small></span>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Private Game Drives -->
+            <article class="offering-card">
+                <div class="offering-image">
+                    <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&q=80" 
+                         alt="Elephants in African savanna" 
+                         loading="lazy">
+                    <span class="offering-badge">FEATURED</span>
+                </div>
+                <div class="offering-content">
+                    <h3>Private Game Drives</h3>
+                    <p>Expert trackers, sunset sundowners, and big five sightings.</p>
+                    <div class="offering-footer">
+                        <a href="#" class="offering-link" data-type="safari">Book Safari →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Guest Experiences Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>Guest Experiences</h2>
+            <div class="stars" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+        </div>
+        
+        <div class="testimonials-carousel">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"The AI concierge made booking our honeymoon room so easy. We didn't have to wait for emails; everything was handled instantly on WhatsApp."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background-color: #E8B4B8;">MT</div>
+                    <div>
+                        <span class="testimonial-name">Marcus Thomo</span>
+                        <span class="testimonial-location">Johannesburg, SA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"The mobile booking experience is incredible. I booked our game drive while on the plane. Simple and fast."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background-color: #A8D8EA;">SJ</div>
+                    <div>
+                        <span class="testimonial-name">Sarah Johnson</span>
+                        <span class="testimonial-location">London, UK</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Best safari lodge in Botswana. WhatsApp booking is genius. Our guide knew exactly what we wanted before we arrived."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar" style="background-color: #B8E0D2;">DC</div>
+                    <div>
+                        <span class="testimonial-name">David Chen</span>
+                        <span class="testimonial-location">Singapore</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="footer">
+        <div class="footer-cta">
+            <div class="footer-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </div>
+            <h2>Ready for an Adventure?</h2>
+            <p>Join us for an unforgettable luxury safari experience in the heart of Botswana.</p>
+        </div>
+        
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#">ABOUT US</a>
+            <a href="#">GALLERY</a>
+            <a href="#">CONTACT</a>
+            <a href="#">PRIVACY</a>
+        </nav>
+        
+        <button class="btn btn-whatsapp footer-btn" id="footerCta">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            </svg>
+            Book via WhatsApp
+        </button>
+        
+        <p class="footer-copyright">© 2024 Botswana Lodge. Demo by Kgaile Digital Solutions.</p>
+    </footer>
+
+    <!-- Chat Modal -->
+    <div class="chat-modal" id="chatModal" role="dialog" aria-modal="true" aria-labelledby="chatModalTitle">
+        <div class="chat-modal-overlay" id="chatModalOverlay"></div>
+        <div class="chat-modal-container">
+            <div class="chat-modal-header">
+                <div class="chat-modal-avatar">B</div>
+                <div>
+                    <h3 id="chatModalTitle">Botswana Lodge</h3>
+                    <span class="chat-modal-status">AI Safari Concierge • Online</span>
+                </div>
+                <button class="chat-modal-close" id="chatModalClose" aria-label="Close chat">×</button>
+            </div>
+            <div class="chat-modal-messages" id="chatMessages">
+                <!-- Messages will be added dynamically -->
+            </div>
+            <div class="chat-modal-input">
+                <input type="text" id="chatInput" placeholder="Type a message..." aria-label="Type a message">
+                <button class="chat-send-btn" id="chatSendBtn" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

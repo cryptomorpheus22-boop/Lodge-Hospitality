@@ -1,7 +1,7 @@
 /**
  * AI Safari Concierge Chat Simulation
  */
-const WHATSAPP_NUMBER = '26771555000';
+const WHATSAPP_NUMBER = '26778496552';
 const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const RESPONSES = {

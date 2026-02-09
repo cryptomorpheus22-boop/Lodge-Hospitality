@@ -98,7 +98,7 @@ function addUserMessage(text) {
     container.scrollTop = container.scrollHeight;
 }
 
-function addAIMessage(text, quickReplies = null) {
+function addAIMessage(text, quickReplies = null, action = null) {
     const container = document.getElementById('chatMessages');
 
     // Show typing indicator
@@ -113,6 +113,14 @@ function addAIMessage(text, quickReplies = null) {
         const div = document.createElement('div');
         div.className = 'modal-message ai';
         let html = `<div class="bubble">${text.replace(/\n/g, '<br>')}`;
+
+        if (action) {
+            html += `<div style="margin-top: 12px;">
+                        <a href="${action.url}" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; text-decoration: none; font-size: 14px; padding: 10px;">
+                            ${action.text}
+                        </a>
+                     </div>`;
+        }
 
         if (quickReplies) {
             html += '<div class="quick-replies">';
@@ -157,12 +165,24 @@ function processInput(text) {
     } else if (chatState.step === 'safari') {
         chatState.step = 'safari_booked';
         const time = lower.includes('morning') || lower.includes('6') ? '6:00 AM' : '4:00 PM';
-        addAIMessage(`Booked! Your ${time} game drive is confirmed. 🦒\n\nYour guide will meet you at reception.\n\nExpect: Big Five sightings, expert tracking, sundowners! 🌅`);
+
+        const action = {
+            text: 'Finalize Booking on WhatsApp',
+            url: `${WHATSAPP_BASE}?text=${encodeURIComponent(`Hi! I'd like to book a ${time} game drive.`)}`
+        };
+
+        addAIMessage(`Booked! Your ${time} game drive is confirmed. 🦒\n\nYour guide will meet you at reception.\n\nExpect: Big Five sightings, expert tracking, sundowners! 🌅`, null, action);
     } else if (chatState.step === 'confirm') {
         if (lower.includes('yes') || lower.includes('confirm')) {
             const ref = `BL2024-${String(new Date().getMonth() + 1).padStart(2, '0')}${String(new Date().getDate()).padStart(2, '0')}`;
             sessionStorage.setItem('booking', JSON.stringify({ ref, ...chatState.data }));
-            addAIMessage(RESPONSES.success(ref));
+
+            const action = {
+                text: 'Send Confirmation to Lodge',
+                url: `${WHATSAPP_BASE}?text=${encodeURIComponent(`Hi! I have a confirmed reservation ref: ${ref} for ${chatState.data.guests} guests, ${chatState.data.dates}.`)}`
+            };
+
+            addAIMessage(RESPONSES.success(ref), null, action);
         } else {
             chatState.step = 'booking';
             addAIMessage("No problem! What dates work better for you?");

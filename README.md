@@ -29,7 +29,7 @@ Open `http://localhost:3000` in your browser.
 
 ## Deployment
 
-Ready for Netlify. Just drag & drop the folder or connect via GitHub.
+Ready for cPanel. Just drag & drop the folder or connect via GitHub.
 
 ## Demo by
 
